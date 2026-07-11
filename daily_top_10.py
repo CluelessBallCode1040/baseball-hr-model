@@ -5,8 +5,11 @@ import requests
 import json
 from pybaseball import statcast
 
-# Install this library via your workflow terminal if needed: pip install MLB-StatsAPI
-import statsapi 
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
+}
+pak::pak("BillPetti/baseballr")
 
 def get_density_altitude(temp_f, pressure_mb, humidity):
     """Calculates a proxy for how thin the air is (thinner air = more home runs)"""
